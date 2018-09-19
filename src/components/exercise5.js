@@ -5,7 +5,7 @@ export default class Exercise extends Component {
     return (
       <div className="Exercise">
         <h1>Exercise n</h1>
-        <div className="alert alert-info">
+        <div className="alert alert-primary">
         </div>
       </div>
     );

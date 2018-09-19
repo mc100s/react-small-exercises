@@ -4,9 +4,9 @@ export default class Exercise4 extends Component {
   render() {
     return (
       <div className="Exercise">
-        <h1>Exercise 4</h1>
-        <div className="alert alert-info">
-          When the user type some information in the input, it should change the list of prime numbers.
+        <h1>Exercise #4</h1>
+        <div className="alert alert-primary">
+          <u>Iteration 1</u>: When the user type some information in the input, it should change the list of prime numbers.
         </div>
         <Application />
       </div>
