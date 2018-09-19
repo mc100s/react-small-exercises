@@ -12,9 +12,10 @@ class App extends Component {
     let exercises = [Exercise1, Exercise2, Exercise3, Exercise4]
     return (
       <div className="App">
-        <nav className="navbar navbar-expand-sm navbar-dark bg-primary">
+        <nav className="navbar navbar-expand navbar-dark bg-primary">
           <div className="container">
-            <Link to="/" className="navbar-brand" >React Exercises</Link>
+            <Link to="/" className="navbar-brand"><img src="/react-logo.svg" alt="React logo" /></Link>
+            {/* <Link to="/" className="navbar-brand">React Exercises</Link> */}
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>

@@ -13,3 +13,7 @@ body {
   padding: 10px;
   margin: 10px 0;
 }
+
+nav img {
+  height: 40px;
+}
