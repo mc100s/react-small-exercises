@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 
 export default class Exercise extends Component {
-  constructor(props) {
-    super(props)
-  }
   render() {
-    let values = ['r', 'g', 'b']
     let squareStyle = {
       backgroundColor: `rgb(127,255,0)`
     }
     return (
       <div className="Exercise">
-        <h1>Exercise 5</h1>
+        <h1>Exercise #5</h1>
         <div className="alert alert-primary">
           <u>Iteration 1</u>: Change the value of R, G and B when scrolling the range inputs.<br />
           <u>Iteration 2</u>: Change the background color of the square according to RGB.<br />
@@ -73,6 +69,7 @@ export default class Exercise extends Component {
   }
 }
 
+// eslint-disable-next-line
 let colors = {
   "#f0f8ff": "aliceblue",
   "#faebd7": "antiquewhite",
