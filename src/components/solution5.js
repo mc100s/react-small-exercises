@@ -3,12 +3,29 @@ import React, { Component } from 'react';
 export default class Exercise extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      r: 127,
+      g: 255,
+      b: 0,
+    }
+    this.handleChange = this.handleChange.bind(this)
+  }
+  handleChange(e) {
+    this.setState({
+      [e.target.name]: Number(e.target.value)
+    })
+  }
+  to2Hex(x) {
+    return ('0' + x.toString(16)).substr(-2)
   }
   render() {
     let values = ['r', 'g', 'b']
     let squareStyle = {
-      backgroundColor: `rgb(127,255,0)`
+      backgroundColor: `rgb(${this.state.r},${this.state.g},${this.state.b})`
     }
+    let rgb = `rgb(${this.state.r},${this.state.g},${this.state.b})`
+    let hex = '#' + this.to2Hex(this.state.r) + this.to2Hex(this.state.g) + this.to2Hex(this.state.b)
+    let colorName = colors[hex]
     return (
       <div className="Exercise">
         <h1>Exercise 5</h1>
@@ -23,36 +40,20 @@ export default class Exercise extends Component {
           <div className="col-6">
             <table className="ml-auto">
               <tbody>
-                <tr>
-                  <td style={{ minWidth: 80 }}>R: 127</td>
-                  <td>
-                    <input
-                      type="range"
-                      max="255"
-                      value={127}
-                      className="form-control" />
-                  </td>
-                </tr>
-                <tr>
-                  <td style={{ minWidth: 80 }}>G: 255</td>
-                  <td>
-                    <input
-                      type="range"
-                      max="255"
-                      value={255}
-                      className="form-control" />
-                  </td>
-                </tr>
-                <tr>
-                  <td style={{ minWidth: 80 }}>B: 0</td>
-                  <td>
-                    <input
-                      type="range"
-                      max="255"
-                      value={0}
-                      className="form-control" />
-                  </td>
-                </tr>
+                {values.map(v => (
+                  <tr key={v}>
+                    <td style={{ minWidth: 80 }}>{v.toUpperCase()}: {this.state[v]}</td>
+                    <td>
+                      <input
+                        type="range"
+                        max="255"
+                        className="form-control"
+                        name={v}
+                        value={this.state[v]}
+                        onChange={this.handleChange} />
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
@@ -62,9 +63,11 @@ export default class Exercise extends Component {
         </div>
         <div className="text-center lead ">
           <pre>
-            rgb(127,255,0)
+            {rgb}
             <br />
-            #7fff00
+            {hex}
+            <br />
+            {colorName}
           </pre>
 
         </div>
