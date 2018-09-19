@@ -12,7 +12,7 @@ export default class Exercise2 extends Component {
         <div className="alert alert-warning">
           <u>Warning</u>: The buttons are inside a form and the form will be submitted when you click on them. You will probably need to do <code>e.preventDefault()</code>.
         </div>
-        <form class="form-inline">
+        <form className="form-inline">
 
           <button className="btn btn-primary mx-2">0</button>
           <select className="form-control mx-2">
