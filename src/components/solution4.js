@@ -16,12 +16,24 @@ export default class Exercise4 extends Component {
 
 
 class Application extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      limit: 42
+    }
+    this.handleChange = this.handleChange.bind(this)
+  }
+  handleChange(e) {
+    this.setState({
+      limit: e.target.value
+    })
+  }
   render() {
     return (
       <div className="border">
         <h2>Application</h2>
-        <BigInput />
-        <DisplayPrimeNumbers limit={100} />
+        <BigInput limit={this.state.limit} onChange={this.handleChange} />
+        <DisplayPrimeNumbers limit={this.state.limit} />
       </div>
     )
   }
@@ -32,7 +44,7 @@ class BigInput extends Component {
     return (
       <div className="border">
         <h2>BigInput</h2>
-        limit = <input type="number" />
+        limit = <input type="number" value={this.props.limit} onChange={this.props.onChange} />
       </div>
     )
   }
